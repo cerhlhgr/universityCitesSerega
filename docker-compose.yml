@@ -1,4 +1,4 @@
-version: "2.5.1"
+version: "3.3"
 services:
   db:
     image: postgres:14.1-alpine
@@ -15,9 +15,7 @@ services:
 
   api_sergey:
     container_name: api_sergey
-    build:
-      context: ./myapp
-      dockerfile: Dockerfile
+    build: ./myapp
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
