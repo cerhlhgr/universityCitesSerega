@@ -1,4 +1,4 @@
-version: "1.0"
+version: "3.0"
 services:
   db:
     image: postgres:14.1-alpine
@@ -17,7 +17,6 @@ services:
     container_name: api_sergey
     build:
       context: ./myapp
-      target: development
       dockerfile: Dockerfile
     environment:
       - POSTGRES_USER=user
