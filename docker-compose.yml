@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    container_name: pg_db
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=bot_vk_sergey
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    container_name: api_sergey
+    build:
+      context: ./myapp
+      target: development
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=bot_vk_sergey
+      - DB_HOST=db
+      - PORT=8081
+      - NODE_ENV=development
+    volumes:
+      - .:/myapp
+      - /myapp/node_modules
+    ports:
+      - 8081:8081
+    command: npm run start
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  pg_data:
