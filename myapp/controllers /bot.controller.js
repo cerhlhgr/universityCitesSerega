@@ -2,7 +2,7 @@ class BotController{
 
     async get(req, res, next) {
         try{
-            res.send(req.body);
+            res.send({title:"jopa"});
         } catch (err){
             next(err)
         }
