@@ -17,6 +17,6 @@ app.use(cookieParser());
 
 
 //тут руты владос
-app.use('/api_serega', indexRouter);
+app.use('/serega', indexRouter);
 
 module.exports = app;
