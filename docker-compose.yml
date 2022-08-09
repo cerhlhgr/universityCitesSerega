@@ -36,7 +36,7 @@ services:
   nginx:
     image: nginx:1.11
     ports:
-      - 8000:8000
+      - 80:80
     volumes:
       - ./nginx/proxy/prod.conf:/etc/nginx/conf.d/prod.conf:ro
       - /var/www/front:/app/static/front
