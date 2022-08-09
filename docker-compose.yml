@@ -12,6 +12,8 @@ services:
       - pg_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - somenetwork
 
   api:
     container_name: api_sergey
@@ -32,6 +34,8 @@ services:
     depends_on:
       - db
     restart: always
+    networks:
+      - somenetwork
 
   nginx:
     image: nginx:1.11
@@ -45,6 +49,10 @@ services:
     depends_on:
       - api
     restart: always
-
+    networks:
+      - somenetwork
 volumes:
   pg_data:
+networks:
+  somenetwork:
+    driver: bridge
