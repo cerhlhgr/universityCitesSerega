@@ -39,7 +39,7 @@ services:
       - 8000:8000
     volumes:
       - ./nginx/proxy/prod.conf:/etc/nginx/conf.d/prod.conf:ro
-#      - /var/www/memory_book_FRONT/build:/app/static/front
+      - /var/www/front:/app/static/front
 #      - /var/www/memory_book_ADMIN/build:/app/static/adminFront
 #      - /home/images:/persist_media
     depends_on:
