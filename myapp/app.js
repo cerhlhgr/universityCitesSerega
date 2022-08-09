@@ -17,6 +17,6 @@ app.use(cookieParser());
 
 
 //тут руты владос
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
 
 module.exports = app;
