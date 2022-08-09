@@ -13,7 +13,7 @@ services:
     ports:
       - "5432:5432"
 
-  api_sergey:
+  api:
     container_name: api_sergey
     build: ./myapp
     environment:
@@ -32,3 +32,8 @@ services:
     depends_on:
       - db
     restart: always
+volumes:
+  pg_data:
+networks:
+  ms_network:
+    external: true
