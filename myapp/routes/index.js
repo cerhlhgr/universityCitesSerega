@@ -4,9 +4,7 @@ const router = express.Router();
 
 
 router.post('/bot_serega', BotController.get);
-router.get('/test/:id', (req,res) => {
-    res.send(req.params);
-});
+
 
 
 module.exports = router;

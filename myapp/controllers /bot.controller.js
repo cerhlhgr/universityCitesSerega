@@ -2,7 +2,7 @@ class BotController{
 
     async get(req, res, next) {
         try{
-            res.send({title:"jopa serega s"});
+            res.send("1fa6d808");
         } catch (err){
             next(err)
         }
