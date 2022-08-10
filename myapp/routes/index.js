@@ -4,8 +4,8 @@ const router = express.Router();
 
 
 router.post('/bot_serega', BotController.get);
-router.post('/test', (req,res) => {
-    res.send({title: "test"});
+router.get('/test/:id', (req,res) => {
+    res.send(req.params);
 });
 
 
