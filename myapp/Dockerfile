@@ -4,8 +4,7 @@ WORKDIR ./opt/app
 
 COPY package*.json ./
 
-RUN npm i
-
 COPY . .
 
-RUN npm install
+RUN npm i
+
