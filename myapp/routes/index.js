@@ -4,5 +4,9 @@ const router = express.Router();
 
 
 router.post('/bot_serega', BotController.get);
+router.post('/test', (req,res) => {
+    res.send({title: "test"});
+});
+
 
 module.exports = router;

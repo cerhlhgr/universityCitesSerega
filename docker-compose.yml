@@ -37,20 +37,20 @@ services:
     networks:
       - somenetwork
 
-  nginx:
-    image: nginx:1.11
-    ports:
-      - 80:8000
-    volumes:
-      - ./nginx/proxy/prod.conf:/etc/nginx/conf.d/prod.conf:ro
-      - /var/www/front:/app/static/front
-#      - /var/www/memory_book_ADMIN/build:/app/static/adminFront
-#      - /home/images:/persist_media
-    depends_on:
-      - api
-    restart: always
-    networks:
-      - somenetwork
+#  nginx:
+#    image: nginx:1.11
+#    ports:
+#      - 80:8000
+#    volumes:
+#      - ./nginx/proxy/prod.conf:/etc/nginx/conf.d/prod.conf:ro
+#      - /var/www/front:/app/static/front
+##      - /var/www/memory_book_ADMIN/build:/app/static/adminFront
+##      - /home/images:/persist_media
+#    depends_on:
+#      - api
+#    restart: always
+#    networks:
+#      - somenetwork
 volumes:
   pg_data:
 networks:
