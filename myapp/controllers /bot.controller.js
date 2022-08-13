@@ -33,7 +33,7 @@ class BotController{
                     const resSend = await Messages.sendMessage(messageBody);
                 }
             }
-            res.send("4dfee1ce");
+            res.send("ok");
                 } catch (err){
             next(err)
         }
