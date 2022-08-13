@@ -13,14 +13,21 @@ class BotController{
                         need_all: 1,
                         country_id:1,
                         access_token: process.env.token_user,
+                        count:10,
                         v: "5.131"
                     }
                     const cities = await GetCitiesService.getCities(reqBody);
+                    let str = 'Выберите id города из списка \n'
+                    for(const item of cities.response.items)
+                    {
+                        const substr = `id: ${item.id} - ${item.title} \n`
+                        str+=substr
+                    }
                     const messageBody =  {
-                        access_token: process.env.token_user,
+                        access_token: process.env.access_token,
                         user_id: req.body.object.message.peer_id,
                         random_id:Math.random(),
-                        message: "cit",
+                        message: str,
                         v: "5.131"
                     }
                     const resSend = await Messages.sendMessage(messageBody);
