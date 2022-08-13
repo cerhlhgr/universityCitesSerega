@@ -27,6 +27,7 @@ class BotController{
                         access_token: process.env.access_token,
                         user_id: req.body.object.message.peer_id,
                         random_id:Math.random(),
+                        read_state: 1,
                         message: str,
                         v: "5.131"
                     }
