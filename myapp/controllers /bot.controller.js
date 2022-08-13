@@ -20,8 +20,7 @@ class BotController{
                     const messageBody =  {
                         access_token: process.env.access_token,
                         user_id: req.body.object.message.from_id,
-                        peer_id: req.body.object.message.peer_id,
-                        message: cities.insult,
+                        message: "g",
                         v: "5.131"
                     }
                     await Messages.sendMessage(messageBody);
