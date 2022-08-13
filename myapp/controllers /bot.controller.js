@@ -27,15 +27,16 @@ class BotController{
                         access_token: process.env.access_token,
                         user_id: req.body.object.message.peer_id,
                         random_id:Math.random(),
-                        read_state: 1,
                         message: str,
                         v: "5.131"
                     }
                     const resSend = await Messages.sendMessage(messageBody);
+                    res.send("ok");
                 }
             }
-            res.send("ok");
-                } catch (err){
+            else {
+                res.send("4dfee1ce");
+            }                } catch (err){
             next(err)
         }
 
